@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StaffLnk | Boutique IT Recruitment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#F9F9F7", // Soft Off-White
+              surface: "#FFFFFF", // Pure White for cards
+              "surface-highlight": "#F2F2F0",
+              primary: "#B88A44", // Darker Gold for visibility on white
+              "primary-dark": "#966F33", 
+              "accent-dark": "#1A1A1A", // Dark accent for text/contrast
+              text: "#1A1A1A", // Nearly Black
+              "text-muted": "#6B7280", // Gray-500
+              "text-light": "#FFFFFF",
+            },
+            fontFamily: {
+              display: ["'Playfair Display'", "serif"],
+              sans: ["'Plus Jakarta Sans'", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              'lg': '0.5rem',
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem', // Added for curvier feel
+              '4xl': '3rem',
+            },
+            backgroundImage: {
+                'gold-gradient': 'linear-gradient(135deg, #B88A44 0%, #E6C88B 100%)',
+                'gold-text-gradient': 'linear-gradient(135deg, #966F33 0%, #D4A355 50%, #966F33 100%)',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        html { scroll-behavior: smooth; background-color: #F9F9F7; }
+        body { background-color: #F9F9F7; color: #1A1A1A; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F9F9F7; }
+        ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+        ::selection { background: #E6C88B; color: #000000; }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #966F33 0%, #D4A355 50%, #966F33 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }.organic-shape {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            transition: all 1s ease;
+        }
+        .organic-shape:hover {
+            border-radius: 60% 40% 30% 70% / 50% 60% 50% 40%;
+        }.circular-text-container {
+             animation: spin 12s linear infinite;
+        }
+        @keyframes spin { 
+            100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+        }
+    </style>
+</head>
+<body class="antialiased">
+<header class="fixed w-full z-50 transition-all duration-300 bg-[#F9F9F7]/90 backdrop-blur-md border-b border-black/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-24">
+<div class="flex-shrink-0 flex items-center">
+<a class="font-display font-bold text-3xl tracking-tight text-text" href="#">
+                    StaffLnk<span class="text-primary">.</span>
+</a>
+</div>
+<nav class="hidden md:flex space-x-10">
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors tracking-wide" href="#">Executive Search</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors tracking-wide" href="#">For Job Seekers</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors tracking-wide" href="#">For Companies</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors tracking-wide" href="#">Insights</a>
+</nav>
+<div class="flex items-center space-x-8">
+<a class="px-7 py-3 text-xs font-bold uppercase tracking-widest border border-primary text-primary hover:bg-primary hover:text-white rounded-full transition-all duration-300" href="#">
+                    Find a Job Now
+                </a>
+</div>
+</div>
+</div>
+</header>
+<section class="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden bg-background">
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#E6C88B]/10 rounded-full blur-[120px] opacity-60"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gray-200/40 rounded-full blur-[100px] opacity-50"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/20 rounded-full mb-8 bg-white shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-primary-dark text-xs font-semibold uppercase tracking-widest">Premium IT Recruitment</span>
+</div>
+<h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-text leading-[1.1] mb-8 tracking-tight">
+            Elevating <br/>
+<span class="text-gold-gradient italic pr-2">Digital Leadership</span>
+</h1>
+<p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 font-light leading-relaxed">
+            We architect the future of organizations by connecting visionary enterprises with elite technology executives through a bespoke, high-touch consultancy.
+        </p>
+<div class="mt-20 max-w-5xl mx-auto">
+<div class="relative grid md:grid-cols-2 gap-8">
+<div class="group relative p-10 md:p-14 bg-surface rounded-[2.5rem] shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-bl-[4rem] -mr-8 -mt-8 transition-all group-hover:bg-primary/5"></div>
+<div class="flex flex-col items-center relative z-10">
+<div class="mb-6 p-5 rounded-full bg-gray-50 text-gray-400 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-inner">
+<span class="material-symbols-outlined text-3xl">person</span>
+</div>
+<h3 class="font-display text-3xl text-text mb-3">For Candidates</h3>
+<p class="text-sm text-gray-500 mb-8 leading-relaxed max-w-xs mx-auto text-center">
+                            Discover exclusive opportunities that align with your career trajectory.
+                        </p>
+<span class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary group-hover:text-primary transition-all">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<div class="group relative p-10 md:p-14 bg-text rounded-[2.5rem] shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[4rem] -mr-8 -mt-8 transition-all group-hover:bg-primary/20"></div>
+<div class="flex flex-col items-center relative z-10">
+<div class="mb-6 p-5 rounded-full bg-white/10 text-white/70 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">business</span>
+</div>
+<h3 class="font-display text-3xl text-white mb-3">For Organizations</h3>
+<p class="text-sm text-white/60 mb-8 leading-relaxed max-w-xs mx-auto text-center">
+                            Access a curated network of vetted technology leaders ready to drive impact.
+                        </p>
+<span class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:border-primary group-hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<div class="mt-10 text-center">
+<a class="text-sm text-gray-500 hover:text-primary transition-colors border-b border-gray-300 hover:border-primary pb-0.5" href="#">View current open roles directly</a>
+</div>
+</div>
+</div>
+</section>
+<div class="py-12 border-y border-black/5 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<p class="text-center text-xs font-semibold text-primary-dark uppercase tracking-[0.2em] mb-10">Trusted by industry leaders</p>
+<div class="grid grid-cols-2 gap-8 md:grid-cols-5 items-center opacity-40 hover:opacity-80 transition-opacity duration-500 grayscale">
+<div class="col-span-1 flex justify-center">
+<img alt="Amazon" class="h-12" src="https://www.shutterstock.com/image-vector/vector-abstract-logo-arrows-brand-260nw-2227207873.jpg"/>
+</div>
+<div class="col-span-1 flex justify-center">
+<img alt="Google" class="h-12" src="https://www.shutterstock.com/image-vector/vector-abstract-logo-arrows-brand-260nw-2227207873.jpg"/>
+</div>
+<div class="col-span-1 flex justify-center">
+<img alt="IBM" class="h-12" src="https://www.shutterstock.com/image-vector/vector-abstract-logo-arrows-brand-260nw-2227207873.jpg"/>
+</div>
+<div class="col-span-1 flex justify-center">
+<img alt="Netflix" class="h-12" src="https://www.shutterstock.com/image-vector/vector-abstract-logo-arrows-brand-260nw-2227207873.jpg"/>
+</div>
+<div class="col-span-1 flex justify-center">
+<img alt="Airbnb" class="h-12" src="https://www.shutterstock.com/image-vector/vector-abstract-logo-arrows-brand-260nw-2227207873.jpg"/>
+</div>
+</div>
+</div>
+</div>
+<section class="py-32 bg-background relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-1 lg:order-2">
+<div class="inline-block mb-4">
+<span class="text-primary font-display italic text-xl">Our methodology</span>
+</div>
+<h2 class="font-display text-4xl md:text-5xl text-text mb-8 leading-tight">
+                Refining the <br/><span class="text-primary-dark">Search Experience</span>
+</h2>
+<p class="text-lg text-gray-500 mb-10 leading-relaxed font-light">
+                Moving beyond the transactional. We provide a boutique experience grounded in deep industry knowledge. We don't just fill positions; we craft the architecture of your team's future success.
+            </p>
+<div class="relative pl-8 border-l border-gray-200 space-y-12">
+<div class="relative group">
+<span class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-300 group-hover:bg-primary transition-colors duration-300 shadow-md"></span>
+<h4 class="text-xl font-display text-text mb-2 group-hover:text-primary transition-colors">Curated Selection</h4>
+<p class="text-sm text-gray-500 leading-relaxed max-w-md">Every candidate is rigorously vetted for technical prowess, soft skills, and deep cultural alignment with your mission.</p>
+</div>
+<div class="relative group">
+<span class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-300 group-hover:bg-primary transition-colors duration-300 shadow-md"></span>
+<h4 class="text-xl font-display text-text mb-2 group-hover:text-primary transition-colors">Discreet &amp; Secure</h4>
+<p class="text-sm text-gray-500 leading-relaxed max-w-md">Encrypted platforms and strict NDA protocols protect your interests. We operate in the shadows so you can shine.</p>
+</div>
+<div class="relative group">
+<span class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-300 group-hover:bg-primary transition-colors duration-300 shadow-md"></span>
+<h4 class="text-xl font-display text-text mb-2 group-hover:text-primary transition-colors">Advisory First</h4>
+<p class="text-sm text-gray-500 leading-relaxed max-w-md">Access to 24/7 strategic counsel to design your organizational chart for future scale before hiring begins.</p>
+</div>
+</div>
+<div class="mt-12">
+<button class="px-8 py-3 bg-text text-white font-bold uppercase tracking-widest text-xs hover:bg-primary rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Our Process
+                </button>
+</div>
+</div>
+<div class="order-2 lg:order-1 relative h-full min-h-[500px]">
+<div class="relative z-10 w-full h-full rounded-[3rem] overflow-hidden shadow-2xl">
+<img alt="Consultation Meeting" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105" src="https://stafflnk.ch/wp-content/uploads/2025/12/Denizdulek-profile-im.png"/>
+</div>
+<div class="absolute -bottom-10 -right-10 z-20 hidden md:block">
+<div class="relative w-40 h-40">
+<div class="absolute inset-0 bg-white rounded-full shadow-xl flex items-center justify-center z-10">
+<div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-4xl -rotate-45">arrow_forward</span>
+</div>
+</div>
+<div class="absolute inset-0 circular-text-container z-20 pointer-events-none">
+<svg class="w-full h-full" viewBox="0 0 100 100">
+<defs>
+<path d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" id="circle"></path>
+</defs>
+<text font-size="11" font-weight="bold" letter-spacing="1.2">
+<textPath class="fill-text uppercase" xlink:href="#circle">
+                                    Start Your Search • Start Your Search •
+                                </textPath>
+</text>
+</svg>
+</div>
+</div>
+</div>
+<div class="absolute top-10 -right-10 w-2/3 h-2/3 bg-gray-200 rounded-[3rem] -z-0"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div>
+<h2 class="font-display text-4xl md:text-5xl text-text mb-6">Core Disciplines</h2>
+<p class="text-gray-500 max-w-xl font-light text-lg">Our expertise spans across critical technology vectors, enabling us to pinpoint talent that drives innovation.</p>
+</div>
+<div class="hidden md:block">
+<a class="group inline-flex items-center gap-2 text-primary font-bold uppercase text-xs tracking-widest border-b border-primary/30 pb-1 hover:text-primary-dark transition-colors" href="#">
+                    View All Categories <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<a class="group relative p-8 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:bg-black hover:border-black transition-all duration-300 flex flex-col justify-between min-h-[280px]" href="#">
+<div class="flex justify-between items-start w-full mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary bg-white rounded-full shadow-sm group-hover:bg-white/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">public</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-gray-700 text-6xl group-hover:text-white/5">public</span>
+</div>
+</div>
+<div>
+<h3 class="font-display text-2xl text-text mb-3 group-hover:text-white transition-colors">Global Localization</h3>
+<p class="text-sm text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400">Connecting tech leads capable of bridging markets between Japan, Europe, and the US.</p>
+<div class="w-8 h-[2px] bg-gray-200 group-hover:bg-primary transition-colors"></div>
+</div>
+</a>
+<a class="group relative p-8 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:bg-black hover:border-black transition-all duration-300 flex flex-col justify-between min-h-[280px]" href="#">
+<div class="flex justify-between items-start w-full mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary bg-white rounded-full shadow-sm group-hover:bg-white/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">analytics</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-gray-700 text-6xl group-hover:text-white/5">analytics</span>
+</div>
+</div>
+<div>
+<h3 class="font-display text-2xl text-text mb-3 group-hover:text-white transition-colors">Technical SEO</h3>
+<p class="text-sm text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400">Finding the rare blend of technical prowess and marketing acumen for growth roles.</p>
+<div class="w-8 h-[2px] bg-gray-200 group-hover:bg-primary transition-colors"></div>
+</div>
+</a>
+<a class="group relative p-8 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:bg-black hover:border-black transition-all duration-300 flex flex-col justify-between min-h-[280px]" href="#">
+<div class="flex justify-between items-start w-full mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary bg-white rounded-full shadow-sm group-hover:bg-white/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">smartphone</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-gray-700 text-6xl group-hover:text-white/5">smartphone</span>
+</div>
+</div>
+<div>
+<h3 class="font-display text-2xl text-text mb-3 group-hover:text-white transition-colors">Mobile Development</h3>
+<p class="text-sm text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400">Sourcing architects for high-scale iOS and Android ecosystems.</p>
+<div class="w-8 h-[2px] bg-gray-200 group-hover:bg-primary transition-colors"></div>
+</div>
+</a>
+<a class="group relative p-8 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:bg-black hover:border-black transition-all duration-300 flex flex-col justify-between min-h-[280px]" href="#">
+<div class="flex justify-between items-start w-full mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary bg-white rounded-full shadow-sm group-hover:bg-white/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">ads_click</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-gray-700 text-6xl group-hover:text-white/5">ads_click</span>
+</div>
+</div>
+<div>
+<h3 class="font-display text-2xl text-text mb-3 group-hover:text-white transition-colors">Performance Marketing</h3>
+<p class="text-sm text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400">Data-driven leaders for Google Ads, Social, and programmatic campaigns.</p>
+<div class="w-8 h-[2px] bg-gray-200 group-hover:bg-primary transition-colors"></div>
+</div>
+</a>
+<a class="group relative p-8 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:bg-black hover:border-black transition-all duration-300 flex flex-col justify-between min-h-[280px]" href="#">
+<div class="flex justify-between items-start w-full mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary bg-white rounded-full shadow-sm group-hover:bg-white/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">diversity_3</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-gray-700 text-6xl group-hover:text-white/5">diversity_3</span>
+</div>
+</div>
+<div>
+<h3 class="font-display text-2xl text-text mb-3 group-hover:text-white transition-colors">Community Mgmt</h3>
+<p class="text-sm text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400">Bilingual managers to foster engagement in global Web3 and Tech communities.</p>
+<div class="w-8 h-[2px] bg-gray-200 group-hover:bg-primary transition-colors"></div>
+</div>
+</a>
+<a class="group relative p-8 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:bg-black hover:border-black transition-all duration-300 flex flex-col justify-between min-h-[280px]" href="#">
+<div class="flex justify-between items-start w-full mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-primary bg-white rounded-full shadow-sm group-hover:bg-white/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">link</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-gray-700 text-6xl group-hover:text-white/5">link</span>
+</div>
+</div>
+<div>
+<h3 class="font-display text-2xl text-text mb-3 group-hover:text-white transition-colors">Backlink &amp; Outreach</h3>
+<p class="text-sm text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400">Specialists in building high-authority digital footprints for enterprise brands.</p>
+<div class="w-8 h-[2px] bg-gray-200 group-hover:bg-primary transition-colors"></div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<div class="py-20 bg-text relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x divide-white/10">
+<div class="p-4">
+<div class="text-4xl lg:text-5xl font-display font-medium text-white mb-3">930+</div>
+<div class="text-xs text-primary uppercase tracking-[0.2em] font-semibold">Placements</div>
+</div>
+<div class="p-4">
+<div class="text-4xl lg:text-5xl font-display font-medium text-white mb-3">640k</div>
+<div class="text-xs text-primary uppercase tracking-[0.2em] font-semibold">Candidates</div>
+</div>
+<div class="p-4">
+<div class="text-4xl lg:text-5xl font-display font-medium text-white mb-3">56</div>
+<div class="text-xs text-primary uppercase tracking-[0.2em] font-semibold">Countries</div>
+</div>
+<div class="p-4">
+<div class="text-4xl lg:text-5xl font-display font-medium text-white mb-3">98%</div>
+<div class="text-xs text-primary uppercase tracking-[0.2em] font-semibold">Retention</div>
+</div>
+</div>
+</div>
+</div>
+<section class="py-32 relative bg-background overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-white skew-x-12 translate-x-32 z-0 shadow-[-20px_0_40px_-10px_rgba(0,0,0,0.05)]"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-16">
+<div class="md:w-1/2">
+<h2 class="font-display text-4xl md:text-5xl font-medium text-text mb-6 leading-tight">
+                    Ready to define <br/>
+<span class="text-primary-dark">what's next?</span>
+</h2>
+<p class="text-lg text-gray-500 mb-10 max-w-lg font-light">
+                    Whether you are looking to hire or looking to be hired, we are your partner in success. 
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="px-8 py-4 bg-primary text-white font-bold uppercase tracking-widest text-xs hover:bg-text hover:text-white rounded-full transition-all duration-300 shadow-lg">
+                        Start Hiring
+                    </button>
+<button class="px-8 py-4 bg-transparent border border-gray-300 text-text font-bold uppercase tracking-widest text-xs hover:border-primary hover:text-primary rounded-full transition-all duration-300">
+                        Contact Team
+                    </button>
+</div>
+</div>
+<div class="md:w-1/2 flex justify-center md:justify-end">
+<div class="relative w-full max-w-sm group">
+<div class="absolute -inset-4 border border-primary/20 rounded-full group-hover:scale-105 transition-transform duration-700"></div>
+<div class="absolute -inset-8 border border-primary/10 rounded-full group-hover:scale-110 transition-transform duration-700 delay-75"></div>
+<div class="relative rounded-full overflow-hidden aspect-square border-4 border-white shadow-2xl">
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply z-10"></div>
+<img alt="Contact us" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGqlgZHZNSnqhQZltxdEYbQfMjlf9Qv6Im6LOJRDoefFATzUXXUXyu0JIZc_grVHU5cXewpkhL4zaUC3JQrcyo7MRNfK13vXlLtX5TlW11H_eyMtwO_8mjuABg2e6lD59vNN5H1wlrCsE-1Od7EoWrDwjqnXM2UuseZ1_mwGCDrRWm10D-o9EeweOW1rygcTk3EAGl2FuC3EvE-jtMiCNGJIqnPYddwLWDtCpmRV8oEvJxDM_5fo60Tk95eQIEeNlDBEM8kd6zLrA"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-surface-highlight border-t border-gray-200 pt-20 pb-10 text-text">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+<div class="lg:col-span-2">
+<a class="font-display font-bold text-2xl text-text mb-8 block" href="#">
+                    StaffLnk<span class="text-primary">.</span>
+</a>
+<p class="text-gray-500 text-sm leading-relaxed mb-8 max-w-xs font-light">
+                    328 Queensberry Street, North Melbourne<br/>
+                    VIC 3051, Australia.<br/>
+                    support@StaffLnk.com
+                </p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary hover:bg-white transition-colors rounded-full" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+<a class="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary hover:bg-white transition-colors rounded-full" href="#"><i class="fa-brands fa-twitter"></i></a>
+<a class="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary hover:bg-white transition-colors rounded-full" href="#"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-text mb-6 text-sm uppercase tracking-widest">Categories</h4>
+<ul class="space-y-4 text-sm text-gray-500 font-light">
+<li><a class="hover:text-primary transition-colors" href="#">Executive Search</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Digital Marketing</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Graphics &amp; Design</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Programming &amp; Tech</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Business Strategy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text mb-6 text-sm uppercase tracking-widest">Community</h4>
+<ul class="space-y-4 text-sm text-gray-500 font-light">
+<li><a class="hover:text-primary transition-colors" href="#">Events</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Forum</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Podcast</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Affiliates</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text mb-6 text-sm uppercase tracking-widest">Newsletter</h4>
+<form class="space-y-4">
+<div>
+<input class="w-full px-4 py-3 bg-white border border-gray-200 rounded-full text-sm text-text placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="Email Address" type="email"/>
+</div>
+<button class="w-full px-4 py-3 bg-primary text-white font-bold uppercase tracking-widest text-xs hover:bg-text transition-colors rounded-full">
+                        Subscribe
+                    </button>
+</form>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-400 uppercase tracking-wider">Copyright © 2024 StaffLnk Inc.</p>
+<div class="flex space-x-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+<i class="fa-brands fa-cc-visa text-2xl text-gray-600"></i>
+<i class="fa-brands fa-cc-mastercard text-2xl text-gray-600"></i>
+<i class="fa-brands fa-cc-paypal text-2xl text-gray-600"></i>
+</div>
+</div>
+</div>
+</footer>
+<a class="fixed bottom-8 right-8 w-12 h-12 border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors z-40 rounded-full bg-white shadow-lg" href="#">
+<i class="fa-solid fa-arrow-up"></i>
+</a>
+</body></html>
