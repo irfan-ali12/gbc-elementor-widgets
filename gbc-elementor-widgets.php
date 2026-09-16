@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Elementor Widgets
  * Description: Custom Elementor widgets built by GBCodies for MikeKRealtor.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: GBCodies
  * Author URI: https://gbcodies.com
  * Text Domain: gbc-elementor-widgets
@@ -11,7 +11,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Define plugin constants
-define( 'GBC_EW_VERSION', '1.0.0' );
+define( 'GBC_EW_VERSION', '1.1.0' );
 define( 'GBC_EW_FILE', __FILE__ );
 define( 'GBC_EW_PATH', plugin_dir_path( __FILE__ ) );
 define( 'GBC_EW_URL', plugin_dir_url( __FILE__ ) );
@@ -76,10 +76,10 @@ add_action( 'wp_enqueue_scripts', function() {
         false
     );
 
-    // Enqueue Google Fonts - StaffLnk Branding
+    // Enqueue Google Fonts
     wp_enqueue_style(
-        'google-fonts-playfair',
-        'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
+        'google-fonts-manrope',
+        'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap',
         [],
         '1.0',
         'all'
@@ -87,7 +87,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
     wp_enqueue_style(
         'google-fonts-plus',
-        'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap',
         [],
         '1.0',
         'all'
@@ -115,7 +115,7 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
         'gbc-ew-frontend',
         GBC_EW_URL . 'assets/css/frontend.css',
-        [ 'google-fonts-playfair', 'google-fonts-plus', 'material-symbols-outlined', 'font-awesome' ],
+        [ 'google-fonts-manrope', 'google-fonts-plus', 'material-symbols-outlined', 'font-awesome' ],
         GBC_EW_VERSION,
         'all'
     );
@@ -152,60 +152,36 @@ add_action( 'wp_enqueue_scripts', function() {
                     theme: {
                         extend: {
                             colors: {
-                                background: '#F9F9F7',
-                                surface: '#FFFFFF',
-                                'surface-highlight': '#F2F2F0',
-                                primary: '#B88A44',
-                                'primary-dark': '#966F33',
-                                'accent-dark': '#1A1A1A',
-                                text: '#1A1A1A',
-                                'text-muted': '#6B7280',
-                                'text-light': '#FFFFFF',
+                                primary: '#5A1E96',
+                                secondary: '#8B5CF6',
+                                accent: '#E9D8FD',
+                                'background-light': '#FDFBFD',
+                                'background-dark': '#0F0A15',
+                                'surface-light': '#FFFFFF',
+                                'surface-dark': '#1A1523',
+                                'text-light': '#1A202C',
+                                'text-dark': '#E2E8F0',
+                                'accent-gray': '#F8FAFC',
+                                'accent-dark-gray': '#231E2E'
                             },
                             fontFamily: {
-                                display: [\"'Playfair Display'\", 'serif'],
+                                display: ['Manrope', 'sans-serif'],
                                 sans: [\"'Plus Jakarta Sans'\", 'sans-serif']
                             },
                             backgroundImage: {
-                                'gold-gradient': 'linear-gradient(135deg, #B88A44 0%, #E6C88B 100%)',
-                                'gold-text-gradient': 'linear-gradient(135deg, #966F33 0%, #D4A355 50%, #966F33 100%)',
+                                'hero-gradient': 'linear-gradient(135deg, #0F0518 0%, #2E1065 100%)',
+                                'purple-gradient': 'linear-gradient(135deg, #6B21A8 0%, #A855F7 100%)',
+                                'card-gradient': 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)'
                             },
-                            borderRadius: {
-                                DEFAULT: '0.25rem',
-                                'lg': '0.5rem',
-                                'xl': '1rem',
-                                '2xl': '1.5rem',
-                                '3xl': '2rem',
-                                '4xl': '3rem',
+                            boxShadow: {
+                                'glow': '0 0 20px rgba(139, 92, 246, 0.3)',
+                                'card': '0 10px 30px -5px rgba(0, 0, 0, 0.05)'
                             }
                         }
                     }
                 };
             }
         });
-        "
-    );
-
-    // Add global StaffLnk branding styles
-    wp_add_inline_style(
-        'gbc-ew-frontend',
-        "
-        html, body {
-            background-color: #F9F9F7;
-            color: #1A1A1A;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: #1A1A1A;
-        }
-        
-        ::selection {
-            background: #E6C88B;
-            color: #000000;
-        }
         "
     );
 }, 999 );

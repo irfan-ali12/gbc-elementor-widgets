@@ -42,7 +42,7 @@ class GBC_EW_CTA_Widget extends Widget_Base {
             [
                 'label'   => __( 'Title', 'gbc-elementor-widgets' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => 'Ready to define what\'s next?',
+                'default' => 'Ready to Find Your Way Home?',
             ]
         );
 
@@ -52,7 +52,7 @@ class GBC_EW_CTA_Widget extends Widget_Base {
                 'label'   => __( 'Subtitle', 'gbc-elementor-widgets' ),
                 'type'    => Controls_Manager::TEXTAREA,
                 'rows'    => 3,
-                'default' => 'Whether you are looking to hire or looking to be hired, we are your partner in success.',
+                'default' => 'Let\'s discuss your goals. Whether you\'re buying, selling, or just curious about the market, I\'m here to provide honest, expert advice.',
             ]
         );
 
@@ -62,7 +62,7 @@ class GBC_EW_CTA_Widget extends Widget_Base {
             [
                 'label'   => __( 'Primary Button Text', 'gbc-elementor-widgets' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => 'Start Hiring',
+                'default' => 'Schedule a Free Consultation',
                 'separator' => 'before',
             ]
         );
@@ -82,7 +82,7 @@ class GBC_EW_CTA_Widget extends Widget_Base {
             [
                 'label'   => __( 'Secondary Button Text', 'gbc-elementor-widgets' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => 'Contact Team',
+                'default' => 'Download Buyers Guide',
             ]
         );
 
@@ -95,11 +95,11 @@ class GBC_EW_CTA_Widget extends Widget_Base {
             ]
         );
 
-        // Contact Image
+        // Mascot Image
         $this->add_control(
-            'contact_image',
+            'mascot_image',
             [
-                'label'   => __( 'Contact Image', 'gbc-elementor-widgets' ),
+                'label'   => __( 'Mascot/Decorative Image', 'gbc-elementor-widgets' ),
                 'type'    => Controls_Manager::MEDIA,
                 'default' => [],
                 'separator' => 'before',
@@ -117,6 +117,19 @@ class GBC_EW_CTA_Widget extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'button_layout',
+            [
+                'label'   => __( 'Button Layout', 'gbc-elementor-widgets' ),
+                'type'    => Controls_Manager::SELECT,
+                'default' => 'row',
+                'options' => [
+                    'row' => __( 'Horizontal', 'gbc-elementor-widgets' ),
+                    'column' => __( 'Vertical', 'gbc-elementor-widgets' ),
+                ],
+            ]
+        );
+
         $this->end_controls_section();
     }
 
@@ -125,52 +138,46 @@ class GBC_EW_CTA_Widget extends Widget_Base {
 
         wp_enqueue_style( 'gbc-ew-frontend' );
 
+        $button_direction = ( $settings['button_layout'] === 'column' ) ? 'flex-col' : 'sm:flex-row';
         ?>
-        <section class="py-32 relative bg-background overflow-hidden">
-            <div class="absolute top-0 right-0 w-1/3 h-full bg-white skew-x-12 translate-x-32 z-0 shadow-[-20px_0_40px_-10px_rgba(0,0,0,0.05)]"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-16">
-                    <div class="md:w-1/2">
-                        <h2 class="font-display text-4xl md:text-5xl font-medium text-text mb-6 leading-tight">
-                            <?php echo esc_html( $settings['cta_title'] ); ?> <br/>
-                            <span class="text-primary-dark">what's next?</span>
-                        </h2>
-                        <p class="text-lg text-gray-500 mb-10 max-w-lg font-light">
-                            <?php echo esc_html( $settings['cta_subtitle'] ); ?>
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-6">
-                            <?php if ( ! empty( $settings['primary_button_url']['url'] ) ) : ?>
-                                <button class="px-8 py-4 bg-primary text-white font-bold uppercase tracking-widest text-xs hover:bg-text hover:text-white rounded-full transition-all duration-300 shadow-lg">
-                                    <a style="text-decoration: none; color: inherit;" href="<?php echo esc_url( $settings['primary_button_url']['url'] ); ?>">
-                                        <?php echo esc_html( $settings['primary_button_text'] ); ?>
-                                    </a>
-                                </button>
-                            <?php endif; ?>
-                            <?php if ( ! empty( $settings['secondary_button_url']['url'] ) ) : ?>
-                                <button class="px-8 py-4 bg-transparent border border-gray-300 text-text font-bold uppercase tracking-widest text-xs hover:border-primary hover:text-primary rounded-full transition-all duration-300">
-                                    <a style="text-decoration: none; color: inherit;" href="<?php echo esc_url( $settings['secondary_button_url']['url'] ); ?>">
-                                        <?php echo esc_html( $settings['secondary_button_text'] ); ?>
-                                    </a>
-                                </button>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2 flex justify-center md:justify-end">
-                        <div class="relative w-full max-w-sm group">
-                            <div class="absolute -inset-4 border border-primary/20 rounded-full group-hover:scale-105 transition-transform duration-700"></div>
-                            <div class="absolute -inset-8 border border-primary/10 rounded-full group-hover:scale-110 transition-transform duration-700 delay-75"></div>
-                            <div class="relative rounded-full overflow-hidden aspect-square border-4 border-white shadow-2xl">
-                                <div class="absolute inset-0 bg-primary/20 mix-blend-multiply z-10"></div>
-                                <?php if ( ! empty( $settings['contact_image']['url'] ) ) : ?>
-                                    <img alt="Contact us" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="<?php echo esc_url( $settings['contact_image']['url'] ); ?>" />
-                                <?php else : ?>
-                                    <div class="w-full h-full bg-gray-200 flex items-center justify-center">
-                                        <span class="material-symbols-outlined text-6xl text-gray-400">image</span>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
+        <section class="relative py-12 sm:py-16 lg:py-24 overflow-hidden bg-primary">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-[#2E1065] opacity-100"></div>
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+            <div class="absolute right-0 bottom-0 opacity-10 transform translate-y-1/4 translate-x-1/4 pointer-events-none hidden md:block">
+                <div class="w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-white rounded-full blur-[80px] sm:blur-[100px]"></div>
+            </div>
+
+            <?php if ( ! empty( $settings['mascot_image']['url'] ) ) : ?>
+                <div class="absolute -top-8 sm:-top-12 md:-top-16 left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 opacity-90 hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                    <img alt="Mascot" class="w-full h-auto drop-shadow-lg mascot-float" src="<?php echo esc_url( $settings['mascot_image']['url'] ); ?>" />
+                </div>
+            <?php endif; ?>
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="mx-auto w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/10 rounded-full flex items-center justify-center mb-4 sm:mb-6 lg:mb-8 backdrop-blur-md border border-white/20 shadow-glow">
+                    <i class="fas fa-key text-white text-lg sm:text-2xl lg:text-3xl"></i>
+                </div>
+
+                <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 tracking-tight">
+                    <?php echo esc_html( $settings['cta_title'] ); ?>
+                </h2>
+
+                <p class="text-sm sm:text-base lg:text-lg xl:text-xl text-purple-100 mb-8 sm:mb-12 lg:mb-16 max-w-2xl mx-auto font-light leading-relaxed px-2 sm:px-0">
+                    <?php echo esc_html( $settings['cta_subtitle'] ); ?>
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 justify-center mt-6 sm:mt-8 lg:mt-10 px-2 sm:px-0">
+                    <?php if ( ! empty( $settings['primary_button_url']['url'] ) ) : ?>
+                        <a href="<?php echo esc_url( $settings['primary_button_url']['url'] ); ?>" class="px-6 sm:px-8 lg:px-10 py-2.5 sm:py-3 lg:py-4 bg-white text-primary font-bold text-sm sm:text-base lg:text-lg rounded-lg sm:rounded-xl shadow-xl hover:bg-gray-50 hover:-translate-y-1 transition-all duration-300 inline-block whitespace-nowrap">
+                            <?php echo esc_html( $settings['primary_button_text'] ); ?>
+                        </a>
+                    <?php endif; ?>
+
+                    <?php if ( ! empty( $settings['secondary_button_url']['url'] ) ) : ?>
+                        <a href="<?php echo esc_url( $settings['secondary_button_url']['url'] ); ?>" class="px-6 sm:px-8 lg:px-10 py-2.5 sm:py-3 lg:py-4 bg-transparent border-2 border-white/30 text-white font-bold text-sm sm:text-base lg:text-lg rounded-lg sm:rounded-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm inline-block whitespace-nowrap">
+                            <?php echo esc_html( $settings['secondary_button_text'] ); ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>

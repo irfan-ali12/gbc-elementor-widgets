@@ -1,26 +1,4 @@
-/* StaffLnk Branding - Custom CSS classes */
-
-/* Global Styling */
-html {
-    scroll-behavior: smooth;
-    background-color: #F9F9F7;
-}
-
-body {
-    background-color: #F9F9F7;
-    color: #1A1A1A;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    color: #1A1A1A;
-}
-
-::selection {
-    background: #E6C88B;
-    color: #000000;
-}
+/* Extracted from home.html - Custom classes only */
 
 /* Override default paragraph margins */
 .elementor-widget-container p,
@@ -40,11 +18,11 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.text-gold-gradient {
-    background: linear-gradient(135deg, #966F33 0%, #D4A355 50%, #966F33 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.text-gradient {
     background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #4e0399, #C084FC);
 }
 
 ::-webkit-scrollbar {
@@ -52,16 +30,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-    background: #F9F9F7;
+    background: #1a1523;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D1D5DB;
+    background: #4c1d95;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #9CA3AF;
+    background: #6d28d9;
 }
 
 .mascot-float {
@@ -111,22 +89,5 @@ h1, h2, h3, h4, h5, h6 {
 
 .gbc-avatars-group img:first-child {
     margin-left: 0;
-}
-
-.organic-shape {
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    transition: all 1s ease;
-}
-
-.organic-shape:hover {
-    border-radius: 60% 40% 30% 70% / 50% 60% 50% 40%;
-}
-
-.circular-text-container {
-    animation: spin 12s linear infinite;
-}
-
-@keyframes spin { 
-    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
 }
 

@@ -248,12 +248,12 @@ class GBC_EW_About_Widget extends Widget_Base {
 
         $flex_direction = ( $settings['layout_type'] === 'right-content' ) ? 'lg:flex-row-reverse' : 'lg:flex-row';
         ?>
-        <section class="py-16 sm:py-20 lg:py-24 bg-surface-highlight overflow-hidden">
+        <section class="py-16 sm:py-20 lg:py-24 bg-accent-gray dark:bg-[#130d1c] overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col <?php echo esc_attr( $flex_direction ); ?> items-center gap-12 sm:gap-16 lg:gap-20 xl:gap-24">
                     <!-- Gallery Section -->
                     <div class="w-full lg:w-1/2 relative">
-                        <div class="absolute -top-12 -left-12 w-48 sm:w-64 h-48 sm:h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                        <div class="absolute -top-12 -left-12 w-48 sm:w-64 h-48 sm:h-64 bg-secondary/10 rounded-full blur-3xl"></div>
                         <div class="absolute -bottom-12 -right-12 w-48 sm:w-64 h-48 sm:h-64 bg-primary/10 rounded-full blur-3xl"></div>
                         <div class="relative z-10 grid grid-cols-2 gap-4 sm:gap-6">
                             <!-- Left Column -->
@@ -262,7 +262,7 @@ class GBC_EW_About_Widget extends Widget_Base {
                                     <img alt="Gallery Image" class="rounded-2xl sm:rounded-3xl shadow-xl w-full h-48 sm:h-64 object-cover hover:scale-[1.02] transition-transform duration-500" src="<?php echo esc_url( $settings['gallery_left_image_1']['url'] ); ?>" />
                                 <?php endif; ?>
 
-                                <div class="bg-surface p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100">
+                                <div class="bg-white dark:bg-surface-dark p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 dark:border-white/5">
                                     <p class="font-display font-bold text-4xl sm:text-5xl text-primary mb-2"><?php echo esc_html( $settings['gallery_stat_box'] ); ?></p>
                                     <p class="text-xs sm:text-sm text-gray-500 uppercase tracking-wider font-semibold"><?php echo esc_html( $settings['gallery_stat_label'] ); ?></p>
                                 </div>
@@ -271,7 +271,7 @@ class GBC_EW_About_Widget extends Widget_Base {
                             <!-- Right Column -->
                             <div class="space-y-4 sm:space-y-6">
                                 <div class="bg-primary p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-white h-auto sm:h-auto">
-                                    <i class="fas fa-quote-left text-2xl sm:text-3xl text-gold mb-3 sm:mb-4 block"></i>
+                                    <i class="fas fa-quote-left text-2xl sm:text-3xl text-secondary mb-3 sm:mb-4 block"></i>
                                     <p class="font-medium text-base sm:text-lg italic leading-relaxed">"<?php echo esc_html( $settings['gallery_quote_text'] ); ?>"</p>
                                 </div>
 
@@ -285,10 +285,10 @@ class GBC_EW_About_Widget extends Widget_Base {
                     <!-- Content Section -->
                     <div class="w-full lg:w-1/2">
                         <span class="inline-block py-2 px-4 rounded-lg bg-primary/10 text-primary font-bold tracking-wider uppercase text-xs mb-6 sm:mb-8"><?php echo esc_html( $settings['section_tag'] ); ?></span>
-                        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-6 sm:mb-8 leading-[1.2]">
+                        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 leading-[1.2]">
                             <?php echo esc_html( $settings['section_title'] ); ?>
                         </h2>
-                        <div class="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed">
+                        <div class="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                             <p>
                                 <?php echo esc_html( $settings['paragraph_1'] ); ?>
                             </p>
@@ -297,7 +297,7 @@ class GBC_EW_About_Widget extends Widget_Base {
                             </p>
                         </div>
 
-                        <div class="mt-8 sm:mt-10 lg:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 pt-8 sm:pt-10 border-t border-gray-200">
+                        <div class="mt-8 sm:mt-10 lg:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 pt-8 sm:pt-10 border-t border-gray-200 dark:border-white/10">
                             <?php if ( ! empty( $settings['signature_image']['url'] ) ) : ?>
                                 <img alt="Signature" class="h-10 sm:h-12 lg:h-14 opacity-70 dark:invert" src="<?php echo esc_url( $settings['signature_image']['url'] ); ?>" />
                             <?php endif; ?>
@@ -311,7 +311,7 @@ class GBC_EW_About_Widget extends Widget_Base {
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     </div>
-                                    <span class="text-xs sm:text-sm font-semibold text-gray-600 whitespace-nowrap"><?php echo esc_html( $settings['clients_count'] ); ?></span>
+                                    <span class="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap"><?php echo esc_html( $settings['clients_count'] ); ?></span>
                                 </div>
                             <?php endif; ?>
                         </div>

@@ -43,7 +43,7 @@ class GBC_EW_Services_Widget extends Widget_Base {
             [
                 'label'   => __( 'Section Title', 'gbc-elementor-widgets' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => 'Core Disciplines',
+                'default' => 'How Can I Help You?',
             ]
         );
 
@@ -53,7 +53,7 @@ class GBC_EW_Services_Widget extends Widget_Base {
                 'label'   => __( 'Section Description', 'gbc-elementor-widgets' ),
                 'type'    => Controls_Manager::TEXTAREA,
                 'rows'    => 3,
-                'default' => 'Our expertise spans across critical technology vectors, enabling us to pinpoint talent that drives innovation.',
+                'default' => 'Providing a comprehensive suite of real estate services tailored to your specific needs.',
             ]
         );
 
@@ -115,45 +115,24 @@ class GBC_EW_Services_Widget extends Widget_Base {
                 'fields'  => $repeater->get_controls(),
                 'default' => [
                     [
-                        'service_icon' => 'public',
-                        'service_title' => 'Global Localization',
-                        'service_description' => 'Connecting tech leads capable of bridging markets between Japan, Europe, and the US.',
-                        'service_link_text' => 'Learn More',
+                        'service_icon' => 'home',
+                        'service_title' => 'Buy a Home',
+                        'service_description' => 'Find your dream property with exclusive access to off-market listings and expert negotiation strategies tailored for you.',
+                        'service_link_text' => 'Start Search',
                         'service_link_url' => [ 'url' => '#' ],
                     ],
                     [
-                        'service_icon' => 'analytics',
-                        'service_title' => 'Technical SEO',
-                        'service_description' => 'Finding the rare blend of technical prowess and marketing acumen for growth roles.',
-                        'service_link_text' => 'Learn More',
+                        'service_icon' => 'sell',
+                        'service_title' => 'Sell Property',
+                        'service_description' => 'Maximize your property\'s value with premium marketing, professional staging, and global exposure to qualified buyers.',
+                        'service_link_text' => 'Get Valuation',
                         'service_link_url' => [ 'url' => '#' ],
                     ],
                     [
-                        'service_icon' => 'smartphone',
-                        'service_title' => 'Mobile Development',
-                        'service_description' => 'Sourcing architects for high-scale iOS and Android ecosystems.',
-                        'service_link_text' => 'Learn More',
-                        'service_link_url' => [ 'url' => '#' ],
-                    ],
-                    [
-                        'service_icon' => 'ads_click',
-                        'service_title' => 'Performance Marketing',
-                        'service_description' => 'Data-driven leaders for Google Ads, Social, and programmatic campaigns.',
-                        'service_link_text' => 'Learn More',
-                        'service_link_url' => [ 'url' => '#' ],
-                    ],
-                    [
-                        'service_icon' => 'diversity_3',
-                        'service_title' => 'Community Mgmt',
-                        'service_description' => 'Bilingual managers to foster engagement in global Web3 and Tech communities.',
-                        'service_link_text' => 'Learn More',
-                        'service_link_url' => [ 'url' => '#' ],
-                    ],
-                    [
-                        'service_icon' => 'link',
-                        'service_title' => 'Backlink & Outreach',
-                        'service_description' => 'Specialists in building high-authority digital footprints for enterprise brands.',
-                        'service_link_text' => 'Learn More',
+                        'service_icon' => 'trending_up',
+                        'service_title' => 'Invest Wisely',
+                        'service_description' => 'Build your portfolio with data-driven insights into emerging markets and high-yield investment opportunities.',
+                        'service_link_text' => 'Explore Options',
                         'service_link_url' => [ 'url' => '#' ],
                     ],
                 ],
@@ -194,37 +173,31 @@ class GBC_EW_Services_Widget extends Widget_Base {
 
         wp_enqueue_style( 'gbc-ew-frontend' );
 
+        $columns = 'md:grid-cols-' . esc_attr( $settings['card_columns'] );
         ?>
-        <section class="py-32 bg-white relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                    <div>
-                        <h2 class="font-display text-4xl md:text-5xl text-text mb-6"><?php echo esc_html( $settings['section_title'] ); ?></h2>
-                        <p class="text-gray-500 max-w-xl font-light text-lg"><?php echo esc_html( $settings['section_description'] ); ?></p>
-                    </div>
-                    <div class="hidden md:block">
-                        <a class="group inline-flex items-center gap-2 text-primary font-bold uppercase text-xs tracking-widest border-b border-primary/30 pb-1 hover:text-primary-dark transition-colors" href="#">
-                            View All Categories <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                    </div>
+        <section class="py-16 sm:py-20 lg:py-24 bg-background-light dark:bg-background-dark relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 sm:mb-16 lg:mb-20 relative">
+                    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"><?php echo esc_html( $settings['section_title'] ); ?></h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg"><?php echo esc_html( $settings['section_description'] ); ?></p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-<?php echo intval( $settings['card_columns'] ); ?> gap-6 sm:gap-8">
                     <?php foreach ( $settings['services'] as $service ) : ?>
-                        <a class="group relative p-8 bg-[#FAFAFA] rounded-2xl border border-gray-100 hover:bg-text hover:border-text transition-all duration-300 flex flex-col justify-between min-h-[280px]" href="#">
-                            <div class="flex justify-between items-start w-full mb-6">
-                                <div class="w-10 h-10 flex items-center justify-center text-primary bg-white rounded-full shadow-sm group-hover:bg-white/10 group-hover:text-primary transition-colors">
-                                    <span class="material-symbols-outlined text-xl"><?php echo esc_attr( $service['service_icon'] ); ?></span>
-                                </div>
-                                <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span class="material-symbols-outlined text-gray-700 text-6xl group-hover:text-white/5"><?php echo esc_attr( $service['service_icon'] ); ?></span>
-                                </div>
+                        <div class="group relative bg-white dark:bg-surface-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-card hover:shadow-glow transition-all duration-500 border border-gray-100 dark:border-white/5 hover:-translate-y-2">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 bg-accent/20 dark:bg-primary/20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 sm:mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                                <span class="material-symbols-outlined text-2xl sm:text-3xl"><?php echo esc_attr( $service['service_icon'] ); ?></span>
                             </div>
-                            <div>
-                                <h3 class="font-display text-2xl text-text mb-3 group-hover:text-white transition-colors"><?php echo esc_html( $service['service_title'] ); ?></h3>
-                                <p class="text-sm text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400"><?php echo esc_html( $service['service_description'] ); ?></p>
-                                <div class="w-8 h-[2px] bg-gray-200 group-hover:bg-primary transition-colors"></div>
-                            </div>
-                        </a>
+                            <h3 class="font-display text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4"><?php echo esc_html( $service['service_title'] ); ?></h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+                                <?php echo esc_html( $service['service_description'] ); ?>
+                            </p>
+                            <?php if ( ! empty( $service['service_link_url']['url'] ) ) : ?>
+                                <a style="color: #5A1E96 !important; text-decoration: none !important; border: none !important; background: none !important;" class="inline-flex items-center text-primary font-bold hover:text-secondary transition-colors text-sm sm:text-base" href="<?php echo esc_url( $service['service_link_url']['url'] ); ?>">
+                                    <?php echo esc_html( $service['service_link_text'] ); ?> <i class="fas fa-arrow-right ml-2 text-xs sm:text-sm transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            <?php endif; ?>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>

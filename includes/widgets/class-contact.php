@@ -245,13 +245,13 @@ class GBC_EW_Contact_Widget extends Widget_Base {
                         <div class="mt-10 flex items-center gap-6">
                             <span class="text-sm font-semibold text-gray-900 dark:text-white"><?php echo esc_html( $settings['social_heading'] ); ?></span>
                             <div class="flex gap-4">
-                                <a class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all dark:bg-white/10 dark:text-gray-300" href="#" title="Facebook">
+                                <a class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all dark:bg-white/10 dark:text-gray-300" href="https://www.facebook.com/mikekrealtor" title="Facebook">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                                <a class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all dark:bg-white/10 dark:text-gray-300" href="#" title="Instagram">
+                                <a class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all dark:bg-white/10 dark:text-gray-300" href="https://www.instagram.com/bruinagent?igsh=NTc4MTIwNjQ2YQ==" title="Instagram">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all dark:bg-white/10 dark:text-gray-300" href="#" title="LinkedIn">
+                                <a class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all dark:bg-white/10 dark:text-gray-300" href="https://www.linkedin.com/in/mike-karamanoukian-321a35381" title="LinkedIn">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
