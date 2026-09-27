@@ -184,7 +184,24 @@
 .gbc-probate-disclaimer { color: var(--gbc-probate-slate) !important; font-size: .85rem; margin-top: 30px !important; }
 .gbc-probate-disclaimer--bordered { border-top: 1px solid var(--gbc-probate-line); padding-top: 24px; }
 
+.gbc-probate-term-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); }
+.gbc-probate-term-card {
+    background: #fff;
+    border: 1px solid var(--gbc-probate-line);
+    border-radius: 16px;
+    padding: 24px 26px;
+}
+.gbc-probate-term-card h3 { font-size: 1rem; margin-bottom: 8px; }
+.gbc-probate-term-card p { color: var(--gbc-probate-slate); font-size: .95rem; margin: 0 !important; }
+
+.gbc-probate-faq-list { list-style: none; margin: 0; padding: 0; }
+.gbc-probate-faq-list li { border-top: 1px solid var(--gbc-probate-line); padding: 22px 0; }
+.gbc-probate-faq-list li:first-child { border-top: 0; padding-top: 0; }
+.gbc-probate-faq-list h4 { font-size: 1.05rem; margin-bottom: 8px; }
+.gbc-probate-faq-list p { color: var(--gbc-probate-slate); margin: 0 !important; }
+
 .gbc-probate-accent-grid { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
+.gbc-probate-professional-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
 .gbc-probate-accent-card {
     background: #fff;
     border: 1px solid var(--gbc-probate-line);
@@ -192,7 +209,11 @@
     border-radius: 12px;
     padding: 20px 24px;
 }
+.gbc-probate-professional-grid .gbc-probate-accent-card h3 { font-size: .98rem; margin-bottom: 6px; }
+.gbc-probate-professional-grid .gbc-probate-accent-card p { color: var(--gbc-probate-slate); font-size: .92rem; }
 .gbc-probate-accent-card p { margin: 0 !important; }
+.gbc-probate-professionals-closing { margin-top: 30px !important; max-width: 68ch; }
+.gbc-probate-referral-link { color: var(--gbc-probate-purple-600) !important; font-weight: 600; text-decoration: underline !important; }
 
 .gbc-probate-option-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
 .gbc-probate-option-card {
@@ -276,7 +297,9 @@
 
 @media (max-width: 900px) {
     .gbc-probate-two-col,
+    .gbc-probate-term-grid,
     .gbc-probate-accent-grid,
+    .gbc-probate-professional-grid,
     .gbc-probate-option-grid,
     .gbc-probate-highlight-list,
     .gbc-probate-zigzag,

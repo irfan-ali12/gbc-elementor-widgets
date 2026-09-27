@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Elementor Widgets
  * Description: Custom Elementor widgets built by GBCodies for MikeKRealtor.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: GBCodies
  * Author URI: https://gbcodies.com
  * Text Domain: gbc-elementor-widgets
@@ -11,7 +11,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Define plugin constants
-define( 'GBC_EW_VERSION', '1.1.0' );
+define( 'GBC_EW_VERSION', '1.1.1' );
 define( 'GBC_EW_FILE', __FILE__ );
 define( 'GBC_EW_PATH', plugin_dir_path( __FILE__ ) );
 define( 'GBC_EW_URL', plugin_dir_url( __FILE__ ) );

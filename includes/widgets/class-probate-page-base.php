@@ -254,6 +254,51 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
         );
         $this->add_control( 'disclaimer', [ 'label' => __( 'Disclaimer', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXTAREA, 'default' => 'This page is for general information only and isn\'t legal, financial, or tax advice. For guidance specific to your situation, talk with a licensed probate attorney.' ] );
         $this->end_controls_section();
+
+        $this->start_controls_section( 'terms_section', [ 'label' => __( 'Terms Worth Knowing', 'gbc-elementor-widgets' ) ] );
+        $this->add_control( 'terms_eyebrow', [ 'label' => __( 'Eyebrow', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'Terms Worth Knowing' ] );
+        $this->add_control( 'terms_title', [ 'label' => __( 'Title', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'A few words you\'ll hear along the way' ] );
+        $this->add_control( 'terms_intro', [ 'label' => __( 'Introduction', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXTAREA, 'default' => 'Probate comes with its own vocabulary. Here\'s what the terms that come up most often actually mean.' ] );
+        $repeater = new Repeater();
+        $repeater->add_control( 'term', [ 'label' => __( 'Term', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT ] );
+        $repeater->add_control( 'definition', [ 'label' => __( 'Definition', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXTAREA ] );
+        $this->add_control(
+            'terms',
+            [
+                'label'       => __( 'Terms', 'gbc-elementor-widgets' ),
+                'type'        => Controls_Manager::REPEATER,
+                'fields'      => $repeater->get_controls(),
+                'title_field' => '{{{ term }}}',
+                'default'     => [
+                    [ 'term' => 'Executor', 'definition' => 'The person named in the will, or appointed by the court, responsible for managing the estate and carrying out its distribution. Also called the personal representative.' ],
+                    [ 'term' => 'Testate', 'definition' => 'When someone dies leaving a valid will, their estate is distributed according to the instructions it contains.' ],
+                    [ 'term' => 'Intestate', 'definition' => 'When someone dies without a will, the estate is distributed according to California\'s laws rather than personal instructions.' ],
+                    [ 'term' => 'Probate Court', 'definition' => 'In California, this is the Superior Court in the county where the deceased lived. It oversees the administration and distribution of the estate.' ],
+                ],
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section( 'faq_section', [ 'label' => __( 'Questions I Hear Often', 'gbc-elementor-widgets' ) ] );
+        $this->add_control( 'faq_eyebrow', [ 'label' => __( 'Eyebrow', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'Questions I Hear Often' ] );
+        $this->add_control( 'faq_title', [ 'label' => __( 'Title', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'A couple of things families usually ask first' ] );
+        $repeater = new Repeater();
+        $repeater->add_control( 'question', [ 'label' => __( 'Question', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT ] );
+        $repeater->add_control( 'answer', [ 'label' => __( 'Answer', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXTAREA ] );
+        $this->add_control(
+            'faqs',
+            [
+                'label'       => __( 'Questions', 'gbc-elementor-widgets' ),
+                'type'        => Controls_Manager::REPEATER,
+                'fields'      => $repeater->get_controls(),
+                'title_field' => '{{{ question }}}',
+                'default'     => [
+                    [ 'question' => 'Do all estates go through probate?', 'answer' => 'Not always. It depends on how the assets were titled. Property held in a living trust or with a named beneficiary often passes without probate, but real estate titled only in the deceased\'s name typically does need to go through the process.' ],
+                    [ 'question' => 'How long does probate take?', 'answer' => 'It varies with the estate\'s complexity and the local court\'s schedule, but most cases run anywhere from a few months to over a year. The real estate portion can often move forward while other parts of the estate are still being resolved.' ],
+                ],
+            ]
+        );
+        $this->end_controls_section();
     }
 
     protected function register_selling_controls() {
@@ -274,6 +319,19 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
             ]
         );
         $this->add_control( 'situations_closing', [ 'label' => __( 'Closing Text', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXTAREA, 'default' => 'If any of this sounds familiar, you\'re not alone. I\'ve been the executor sorting through a parent\'s home myself, and I know how much clearer things get once you have a plan.' ] );
+        $this->end_controls_section();
+
+        $this->start_controls_section( 'sale_during_probate_section', [ 'label' => __( 'Sale During Probate', 'gbc-elementor-widgets' ) ] );
+        $this->add_control( 'sale_during_probate_title', [ 'label' => __( 'Title', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'Can the house be sold during probate?' ] );
+        $this->add_control(
+            'sale_during_probate_text',
+            [
+                'label'   => __( 'Text', 'gbc-elementor-widgets' ),
+                'type'    => Controls_Manager::TEXTAREA,
+                'rows'    => 5,
+                'default' => 'In most cases, yes. Whether the sale can proceed usually depends on the authority the will grants the executor and guidance from the estate\'s attorney. Some estates give the executor full authority to sell, while others need court approval first. Either way, working with someone experienced in probate sales helps keep the process moving within the legal timeline.',
+            ]
+        );
         $this->end_controls_section();
 
         $this->start_controls_section( 'options_section', [ 'label' => __( 'Property Options', 'gbc-elementor-widgets' ) ] );
@@ -324,6 +382,52 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
                 'A practical option when the executor lives far away and can\'t oversee the work',
             ]
         );
+        $this->end_controls_section();
+
+        $this->start_controls_section( 'professionals_section', [ 'label' => __( 'Trusted Professionals', 'gbc-elementor-widgets' ) ] );
+        $this->add_control( 'professionals_eyebrow', [ 'label' => __( 'Eyebrow', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'You Don\'t Have to Find Them Alone' ] );
+        $this->add_control( 'professionals_title', [ 'label' => __( 'Title', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'Trusted professionals I can put you in touch with' ] );
+        $this->add_control(
+            'professionals_intro',
+            [
+                'label'   => __( 'Introduction', 'gbc-elementor-widgets' ),
+                'type'    => Controls_Manager::TEXTAREA,
+                'rows'    => 4,
+                'default' => 'Settling an estate usually calls for more than one kind of help. I work with people in each of these categories around Alhambra and the San Gabriel Valley, and I\'m glad to make an introduction when you need one.',
+            ]
+        );
+        $repeater = new Repeater();
+        $repeater->add_control( 'category', [ 'label' => __( 'Category', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT ] );
+        $repeater->add_control( 'description', [ 'label' => __( 'Description', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXTAREA ] );
+        $this->add_control(
+            'professionals',
+            [
+                'label'       => __( 'Professional Categories', 'gbc-elementor-widgets' ),
+                'type'        => Controls_Manager::REPEATER,
+                'fields'      => $repeater->get_controls(),
+                'title_field' => '{{{ category }}}',
+                'default'     => [
+                    [ 'category' => 'Probate Attorneys', 'description' => 'To guide the legal and court side of the process' ],
+                    [ 'category' => 'Estate Sale Companies', 'description' => 'To price, market, and run a sale of remaining belongings' ],
+                    [ 'category' => 'Cleanout Services', 'description' => 'To clear furniture, belongings, and debris from the home' ],
+                    [ 'category' => 'Appraisers', 'description' => 'For certified property valuations for estate purposes' ],
+                    [ 'category' => 'Property Maintenance', 'description' => 'To secure, clean, and maintain the home while it\'s vacant' ],
+                    [ 'category' => 'Title Professionals', 'description' => 'To ensure a clean title transfer at closing' ],
+                ],
+            ]
+        );
+        $this->add_control( 'professionals_closing_before', [ 'label' => __( 'Closing Text Before Link', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXTAREA, 'default' => 'Nothing obliges you to use anyone I recommend, and any advisor your family has already chosen is welcome to stay involved.' ] );
+        $this->add_control( 'professionals_link_text', [ 'label' => __( 'Referral Link Text', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'Ask me for a referral' ] );
+        $this->add_control(
+            'professionals_link',
+            [
+                'label'       => __( 'Referral Link', 'gbc-elementor-widgets' ),
+                'type'        => Controls_Manager::URL,
+                'default'     => [ 'url' => '/contact/' ],
+                'description' => __( 'Replace this URL when the dedicated referral link is provided.', 'gbc-elementor-widgets' ),
+            ]
+        );
+        $this->add_control( 'professionals_closing_after', [ 'label' => __( 'Closing Text After Link', 'gbc-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => 'whenever you need one.' ] );
         $this->end_controls_section();
     }
 
@@ -474,6 +578,39 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
                 <p class="gbc-probate-disclaimer gbc-probate-disclaimer--bordered"><?php echo esc_html( $settings['disclaimer'] ); ?></p>
             </div>
         </section>
+        <section class="gbc-probate-section gbc-probate-section--alt">
+            <div class="gbc-probate-container">
+                <div class="gbc-probate-section-head">
+                    <?php $this->render_eyebrow( $settings['terms_eyebrow'] ); ?>
+                    <h2><?php echo esc_html( $settings['terms_title'] ); ?></h2>
+                    <p class="gbc-probate-lead"><?php echo esc_html( $settings['terms_intro'] ); ?></p>
+                </div>
+                <div class="gbc-probate-term-grid">
+                    <?php foreach ( $settings['terms'] as $term ) : ?>
+                        <div class="gbc-probate-term-card">
+                            <h3><?php echo esc_html( $term['term'] ); ?></h3>
+                            <p><?php echo esc_html( $term['definition'] ); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+        <section class="gbc-probate-section">
+            <div class="gbc-probate-container">
+                <div class="gbc-probate-section-head">
+                    <?php $this->render_eyebrow( $settings['faq_eyebrow'] ); ?>
+                    <h2><?php echo esc_html( $settings['faq_title'] ); ?></h2>
+                </div>
+                <ul class="gbc-probate-faq-list">
+                    <?php foreach ( $settings['faqs'] as $faq ) : ?>
+                        <li>
+                            <h4><?php echo esc_html( $faq['question'] ); ?></h4>
+                            <p><?php echo esc_html( $faq['answer'] ); ?></p>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </section>
         <?php
     }
 
@@ -496,6 +633,17 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
         </section>
         <section class="gbc-probate-section">
             <div class="gbc-probate-container">
+                <div class="gbc-probate-callout">
+                    <span class="gbc-probate-callout-icon"><?php echo $this->get_icon_svg( 'info' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+                    <div>
+                        <h3><?php echo esc_html( $settings['sale_during_probate_title'] ); ?></h3>
+                        <p><?php echo esc_html( $settings['sale_during_probate_text'] ); ?></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gbc-probate-section gbc-probate-section--alt">
+            <div class="gbc-probate-container">
                 <div class="gbc-probate-section-head">
                     <?php $this->render_eyebrow( $settings['options_eyebrow'] ); ?>
                     <h2><?php echo esc_html( $settings['options_title'] ); ?></h2>
@@ -513,7 +661,7 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
                 </div>
             </div>
         </section>
-        <section class="gbc-probate-section gbc-probate-section--alt">
+        <section class="gbc-probate-section">
             <div class="gbc-probate-container">
                 <div class="gbc-probate-callout">
                     <span class="gbc-probate-callout-icon"><?php echo $this->get_icon_svg( 'box' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
@@ -525,7 +673,7 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
                 </div>
             </div>
         </section>
-        <section class="gbc-probate-section">
+        <section class="gbc-probate-section gbc-probate-section--alt">
             <div class="gbc-probate-container">
                 <div class="gbc-probate-highlight">
                     <div class="gbc-probate-section-head">
@@ -535,6 +683,28 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
                     </div>
                     <?php $this->render_check_list( $settings['as_is_items'], 'gbc-probate-highlight-list' ); ?>
                 </div>
+            </div>
+        </section>
+        <section class="gbc-probate-section">
+            <div class="gbc-probate-container">
+                <div class="gbc-probate-section-head">
+                    <?php $this->render_eyebrow( $settings['professionals_eyebrow'] ); ?>
+                    <h2><?php echo esc_html( $settings['professionals_title'] ); ?></h2>
+                    <p class="gbc-probate-lead"><?php echo esc_html( $settings['professionals_intro'] ); ?></p>
+                </div>
+                <div class="gbc-probate-professional-grid">
+                    <?php foreach ( $settings['professionals'] as $professional ) : ?>
+                        <div class="gbc-probate-accent-card">
+                            <h3><?php echo esc_html( $professional['category'] ); ?></h3>
+                            <p><?php echo esc_html( $professional['description'] ); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <p class="gbc-probate-professionals-closing">
+                    <?php echo esc_html( $settings['professionals_closing_before'] ); ?>
+                    <?php $this->render_link( $settings['professionals_link'], $settings['professionals_link_text'], 'gbc-probate-referral-link' ); ?>
+                    <?php echo esc_html( $settings['professionals_closing_after'] ); ?>
+                </p>
             </div>
         </section>
         <?php
@@ -736,6 +906,7 @@ abstract class GBC_EW_Probate_Page_Base extends Widget_Base {
     protected function get_icon_svg( $icon ) {
         $paths = [
             'check' => '<path d="M20 6L9 17l-5-5"/>',
+            'info' => '<circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r=".5" fill="currentColor"/>',
             'home' => '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>',
             'key' => '<circle cx="8" cy="15" r="4"/><path d="M10.5 12.5L19 4M19 4h-4M19 4v4"/>',
             'building' => '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/>',
